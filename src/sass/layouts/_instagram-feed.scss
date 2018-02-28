@@ -1,0 +1,40 @@
+.instagram-feed-container {
+  margin-top: 1.5em;
+  .instagram-feed-mosaic {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1em;
+  }
+  .instagram-feed-item {
+    height: 15em;
+    width: auto;
+    opacity: 1;
+    display: block;
+    margin-right: 1em;
+    img {
+      height: 100%;
+    }
+  }
+  .instagram-feed-item:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .instagram-feed-plus {
+    border-radius: 10px;
+    width: 192px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+    align-items: center;
+    font-size: 3em;
+    color: white;
+    background-color: rgba(43, 46, 56, 0.8);
+
+    i {
+      opacity: 0.8;
+    }
+  }
+}

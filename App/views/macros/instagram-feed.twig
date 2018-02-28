@@ -1,0 +1,15 @@
+<div class="instagram-feed-container">
+    <div class="instagram-feed-title"><h2 class="heading">Dernières images</h2></div>
+    <div class="instagram-feed-mosaic">
+        {#{{ dump(lastInstagramPosts) }}#}
+        {% for post in lastInstagramPosts %}
+            <a class="instagram-feed-item" title="{{ post.caption.text }}" href="{{ post.link }}">
+                <img src="{{ post.images.standard_resolution.url }}" alt="{{ post.caption.text }}">
+            </a>
+        {% endfor %}
+        <a class="instagram-feed-item instagram-feed-plus" title="En voir plus"
+           href="{{ config('socials')['instagram'] }}">
+            <i class="fas fa-plus"></i>
+        </a>
+    </div>
+</div>

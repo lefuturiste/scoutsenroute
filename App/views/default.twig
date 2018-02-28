@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {% if block("meta") is defined %}
+        {{ block('meta') }}
+    {% endif %}
+
+    <title>Scouts en route | {{ title }} </title>
+
+    <link rel="stylesheet" href="/dist/css/app.css">
+    {% if block("style") is defined %}
+        {{ block('style') }}
+    {% endif %}
+</head>
+<body>
+
+<!-- HEADER -->
+{{ include('macros/header.twig') }}
+<!-- END OF HEADER -->
+
+{% if block("cover") is defined %}
+    {{ block('cover') }}
+{% endif %}
+<!-- CONTENT -->
+<div class="content">
+    <div class="container mx-auto">
+        {{ block('content') }}
+    </div>
+</div>
+<!-- fin CONTENT -->
+
+<!-- FOOTER -->
+{{ include('macros/footer.twig') }}
+<!-- END OF FOOTER -->
+
+<div class="nav-mobile" id="nav-mobile">
+    <div class="nav-mobile-container">
+        <div class="nav-mobile-close-container" id="nav-mobile-close-button">
+            <button class="nav-mobile-close-button">
+                <i class="fas fa-times-circle"></i> Fermer
+            </button>
+        </div>
+        <div class="nav-mobile-content">
+            <ul class="nav-mobile-nav">
+                <li><a href="{{ path_for('home') }}">Accueil</a></li>
+                <li><a href="{{ path_for('blog.posts') }}">Actualités</a></li>
+                <li><a href="{{ path_for('tour') }}">La Tournée</a></li>
+                <li><a href="{{ path_for('cabaret') }}">Soirée cabaret</a></li>
+                <li><a href="{{ path_for('about') }}">A propos</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/dist/js/app.min.js"></script>
+{% if block("scripts") is defined %}
+    {{ block('scripts') }}
+{% endif %}
+<!-- Fin Js -->
+
+<script>
+    $('#nav-mobile-button').click(function () {
+        $('#nav-mobile').fadeIn()
+        $('body').css('overflow-y', 'hidden')
+    })
+
+    $('#nav-mobile-close-button').click(function () {
+        $('#nav-mobile').fadeOut()
+        $('body').css('overflow-y', 'auto')
+    })
+</script>
+
+</body>
+</html>

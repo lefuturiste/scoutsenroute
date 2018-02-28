@@ -1,0 +1,17 @@
+.post-info {
+  opacity: 0.8;
+  background-color: #eeeeee;
+  padding: 1em;
+  margin-bottom: 2em;
+  margin-top: -3em;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  i {
+    color: #333333;
+    margin-right: 0.5em;
+  }
+}

@@ -1,0 +1,44 @@
+.cover-tour {
+  margin-top: 2em;
+}
+
+.cover-tour-back {
+  height: 14em;
+  background: black url('https://files.lefuturiste.fr/direct/D4CBAD5C3EEEDA063ECF.jpg');
+  background-size: cover;
+  background-position-y: center;
+}
+
+.cover-tour-container {
+  background-color: rgba(142, 68, 173, 0.8);
+  position: relative;
+  top: -14em;
+  margin-bottom: -13em;
+  color: white;
+  display: flex;
+  padding-top: 5%;
+  height: 14em;
+  width: 100%;
+
+  .cover-tour-title {
+    font-size: 2em;
+  }
+
+  .cover-tour-subtitle {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    span {
+      opacity: 0.8;
+      font-size: 0.8em;
+      margin-left: 0.5em;
+    }
+  }
+
+  .cover-tour-button {
+    display: block;
+    margin-top: 1.5em;
+    width: auto;
+    float: left;
+    text-decoration: none;
+  }
+}

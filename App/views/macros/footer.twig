@@ -1,0 +1,54 @@
+<hr class="footer-hr">
+<div class="partners-container container mx-auto">
+    <div class="partners-content">
+        <h3 class="partners-title">Nos partenaires</h3>
+        <hr class="footer-hr">
+        <div class="partners-mosaic">
+            <div class="partners-item">
+                <img src="https://files.lefuturiste.fr/direct/579873AD104E3D77073D.png">
+            </div>
+            <div class="partners-item">
+                <img src="https://files.lefuturiste.fr/direct/BAC8F297311DE8885081.png">
+            </div>
+            <div class="partners-item">
+                <img src="https://files.lefuturiste.fr/direct/03ADC5CF1AA3CEF825A0.jpg">
+            </div>
+            <div class="partners-item">
+                <img src="https://files.lefuturiste.fr/direct/73C3455CC7D7B57241F4.jpg">
+            </div>
+            <div class="partners-item">
+                <img src="https://files.lefuturiste.fr/direct/CDED9E093E8F0767E985.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-container">
+    <div class="footer-content mx-auto container">
+        <div class="flex flex-wrap">
+            <div class="w-full lg:w-1/2">
+                <h1 class="footer-title">
+                    Scouts en route
+                </h1>
+                <p>
+                    Les scouts en route, c'est un groupe  de 18 pionniers/caravelles @sgdf, venant de Normandie pour produire un spectacle vivant de marionnettes, dans toute la France
+                </p>
+            </div>
+            <div class="w-full lg:w-1/4">
+                <ul class="footer-socials">
+                    <li><a href="{{ config('socials')['twitter'] }}"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="{{ config('socials')['facebook'] }}"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="{{ config('socials')['instagram'] }}"> <i class="fab fa-instagram"></i></a></li>
+                    <li><a href="mailto:{{ config('socials')['email'] }}"> <i class="far fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <div class="w-full lg:w-1/4">
+                <ul class="footer-links">
+                    <li><a href="{{ path_for('about') }}">A propos</a></li>
+                    <li><a href="{{ path_for('contact') }}">Nous contacter</a></li>
+                    <li><a href="{{ path_for('legals') }}">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

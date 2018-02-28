@@ -1,0 +1,20 @@
+.error-container-sm, .error-container {
+
+  .error-content {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .error-icon {
+    margin-right: 0;
+  }
+
+  .error-text {
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1em;
+  }
+
+}

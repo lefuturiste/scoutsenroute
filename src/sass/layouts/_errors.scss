@@ -1,0 +1,45 @@
+.error-container {
+  background-color: #cccccc;
+  opacity: 0.8;
+  color: #333333;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20em;
+
+  .error-content {
+    display: flex;
+  }
+
+  .error-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 2.5em;
+    i {
+      font-size: 4em;
+    }
+  }
+
+  .error-title {
+    margin-bottom: .5em;
+  }
+}
+
+.error-container-sm {
+  .error-icon {
+    margin-right: 1.5em;
+    i {
+      font-size: 2em;
+    }
+  }
+
+  .error-text {
+    display: flex;
+    align-items: center;
+  }
+  .error-title {
+    margin-bottom: 0;
+  }
+}

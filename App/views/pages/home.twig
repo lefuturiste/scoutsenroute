@@ -1,0 +1,53 @@
+{% extends "default.twig" %}
+{% set title = "Accueil" %}
+{% set cover = true %}
+{% block cover %}
+
+    <div class="cover-cabaret-back">
+    </div>
+    <div class="cover-cabaret-container">
+        <div class="cover-cabaret-content container mx-auto">
+            <h1 class="cover-cabaret-title">Soirée Cabaret</h1>
+            <h2 class="cover-cabaret-subtitle">21 Avril <span>19h30</span></h2>
+
+            <a href="{{ path_for('cabaret') }}"
+               class="cover-cabaret-button bg-blue hover:bg-blue-dark text-white font-bold py-3 px-6 rounded font-medium">En
+                savoir plus</a>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+
+    <div class="flex flex-wrap">
+        <div class="w-full lg:w-3/4 home-posts">
+
+            <h2 class="heading">Dernières actualités</h2>
+
+            {{ include('macros/posts.twig') }}
+        </div>
+
+        <div class="w-full lg:w-1/4 twitter-tl-container">
+            <a class="twitter-timeline" data-width="100%" data-height="800"
+               href="{{ config('socials')['twitter'] }}?ref_src=twsrc%5Etfw">Tweets by Raspberry_Pi</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+
+    {{ include('macros/instagram-feed.twig') }}
+
+    <div class="cover-tour">
+        <div class="cover-tour-back">
+        </div>
+        <div class="cover-tour-container">
+            <div class="cover-tour-content container mx-auto">
+                <h2 class="cover-tour-title">Imaginarium Dream</h2>
+                <h3 class="cover-tour-subtitle">Du 4 au 25 Août 2018 <span>Dans toute la france</span></h3>
+
+                <a href="{{ path_for('tour') }}"
+                   class="cover-tour-button bg-pink hover:bg-pink-dark text-white font-bold py-3 px-6 rounded font-medium">En
+                    savoir plus</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

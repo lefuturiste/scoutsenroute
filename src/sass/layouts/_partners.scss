@@ -1,0 +1,25 @@
+.partners-container {
+  margin-top: 3em;
+
+  .partners-content {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .partners-mosaic {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .partners-item {
+      img {
+        height: 100px;
+      }
+    }
+  }
+  .partners-title {
+    display: flex;
+    justify-content: center;
+    color: #333333;
+  }
+}

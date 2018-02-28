@@ -1,0 +1,19 @@
+{% extends "default.twig" %}
+{% set title = 'Nous contacter' %}
+{% block content %}
+    <div class="cover-page-container" style='background-image: url("https://files.lefuturiste.fr/direct/B0640EABD05742D64021.jpeg")'>
+        <div class="cover-page-content">
+            <h1 class="cover-page-title">Nous contacter</h1>
+        </div>
+    </div>
+
+    <p class="page-p">
+        Vous pouvez contacter <b>Mickael Dumais</b>, le responsable du projet au <b>+33 6 50 41 38 38</b>, une adresse email est aussi à votre disposition : <a href="mailto:{{ config('socials')['email'] }}"><b>{{ config('socials')['email'] }}</b></a>
+    </p>
+
+    <div class="" style="margin-top: 2em">
+
+        <script type="text/javascript" defer src="//www.123formbuilder.com/embed/3489699.js" data-role="form" data-default-width="650px"></script>
+    </div>
+
+{% endblock %}

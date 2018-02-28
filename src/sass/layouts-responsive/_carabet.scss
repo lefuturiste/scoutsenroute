@@ -1,0 +1,51 @@
+.section-mosaic {
+  .price {
+    .price-plan-item {
+      border-radius: 0 !important;
+    }
+  }
+
+  .eating {
+    :first-child {
+      flex-wrap: wrap;
+    }
+    .left-part {
+      width: 100%;
+      margin-right: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+
+  .section-mosaic-title {
+    margin-bottom: .5em;
+  }
+
+  .left-part {
+    margin-bottom: .5em;
+  }
+
+  .location {
+    iframe {
+      width: 100%;
+    }
+  }
+
+  .programmation {
+
+    .music-groups-mosaic {
+      width: 100%;
+    }
+  }
+
+  .booking {
+    .booking-ways-item {
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+  }
+}

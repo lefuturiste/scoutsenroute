@@ -1,0 +1,17 @@
+<div class="header-container {% if cover is defined
+%}header-cover{% endif %}">
+    <div class="header-title">
+        <a href="{{ path_for('home') }}" class="header-title-link"><h1 class="header-title-title">Scouts en route</h1></a>
+    </div>
+    <div class="header-nav">
+        <ul class="nav-desktop">
+            <li><a href="{{ path_for('home') }}">Accueil</a></li>
+            <li><a href="{{ path_for('blog.posts') }}">Actualités</a></li>
+            <li><a href="{{ path_for('tour') }}">La Tournée</a></li>
+            <li><a href="{{ path_for('cabaret') }}">Soirée cabaret</a></li>
+            <li><a href="{{ path_for('about') }}">A propos</a></li>
+        </ul>
+        <button class="nav-mobile-button" id="nav-mobile-button"><i class="fas fa-bars"></i></button>
+
+    </div>
+</div>
