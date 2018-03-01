@@ -49,6 +49,7 @@ class BlogApiController extends Controller
 			$post->id = uniqid();
 			$post->title = $validator->getValue('title');
 			$post->slug = $slugify->slugify($validator->getValue('title'));
+			$post->summary = $validator->getValue('summary');
 			$post->thumb_url = $validator->getValue('thumb_url');
 			$post->content = $validator->getValue('content');
 			if (User::find($validator->getValue('user_id')) == NULL){
@@ -88,6 +89,7 @@ class BlogApiController extends Controller
 				$post->slug = $slugify->slugify($validator->getValue('title'));
 				$post->thumb_url = $validator->getValue('thumb_url');
 				$post->cover_url = $validator->getValue('cover_url');
+				$post->summary = $validator->getValue('summary');
 				$post->content = $validator->getValue('content');
 				if (User::find($validator->getValue('user_id')) == NULL){
 					$user = [

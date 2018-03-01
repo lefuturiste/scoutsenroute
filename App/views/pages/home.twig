@@ -24,6 +24,12 @@
             <h2 class="heading">Dernières actualités</h2>
 
             {{ include('macros/posts.twig') }}
+            <div class="posts-mosaic-plus">
+                <a href="{{ path_for('blog.posts') }}"
+                   class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+                    Voir plus d'articles
+                </a>
+            </div>
         </div>
 
         <div class="w-full lg:w-1/4 twitter-tl-container">

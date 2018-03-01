@@ -9,15 +9,6 @@
     margin-bottom: 1.5em;
   }
 
-  .posts-mosaic-plus {
-    margin-top: 2em;
-    margin-bottom: 2em;
-
-    a {
-      color: white !important;
-    }
-  }
-
   a {
     color: $light-link-color;
     text-decoration: solid;
@@ -26,5 +17,20 @@
     text-decoration: solid;
     transition: opacity 0.2s;
     opacity: 0.8;
+  }
+
+  .posts-mosaic-item-content {
+    width: 100%;
+  }
+}
+
+
+
+.posts-mosaic-plus {
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  a {
+    color: white !important;
   }
 }

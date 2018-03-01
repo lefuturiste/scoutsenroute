@@ -1,5 +1,7 @@
 {% extends "default.twig" %}
 {% set title = post.title %}
+{% set description = post.summary %}
+{% set image = post.cover_url %}
 {% block content %}
 
     <div class="cover-page-container" style='background-image: url("{{ post.cover_url }}")'>
@@ -19,7 +21,8 @@
     <div class="page-p markdown">
         <div class="markdown">
             <div class="markdown-body">
-
+                <p>{{ post.summary }}</p>
+                <br>
                 {{ post.content|markdown }}
             </div>
         </div>

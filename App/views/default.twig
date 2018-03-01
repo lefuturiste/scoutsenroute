@@ -1,9 +1,23 @@
+{% if description is not defined %}
+    {% set description = "Les scouts en route, c'est un groupe  de 18 pionniers/caravelles, venant de Normandie pour produire un spectacle vivant et solidaire, dans toute la France" %}
+{% endif %}
+{% if image is not defined %}
+    {% set image = "https://files.lefuturiste.fr/direct/D4CBAD5C3EEEDA063ECF.jpg" %}
+{% endif %}
 <!DOCTYPE html>
 <html>
 <head>
     <!-- Meta -->
     <meta name="charset" content="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta property="og:title"              content="{{ title }}" />
+    <meta property="og:description"        content="{{ description }}" />
+    <meta property="og:image"              content="{{ image }}" />
+    <meta name="robots" content="index,follow" />
+
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="Scouts en route, Scouts et guide de France, Imaginarium Dream">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
