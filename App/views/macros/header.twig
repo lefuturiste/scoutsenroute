@@ -1,7 +1,7 @@
-<div class="header-container {% if cover is defined
-%}header-cover{% endif %}">
+<div class="header-container {% if cover is defined %}header-cover header-cover-{{ cover_type }}{% endif %}">
     <div class="header-title">
-        <a href="{{ path_for('home') }}" class="header-title-link"><h1 class="header-title-title">Scouts en route</h1></a>
+        <a href="{{ path_for('home') }}" class="header-title-link"><h1 class="header-title-title">Scouts en route</h1>
+        </a>
     </div>
     <div class="header-nav">
         <ul class="nav-desktop">

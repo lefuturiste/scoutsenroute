@@ -1,11 +1,15 @@
 .instagram-feed-container {
 
+  .instagram-feed-mosaic {
+    justify-content: space-around;
+  }
+
   .instagram-feed-item {
     height: 250px;
     img {
       height: 100%;
-      margin-right: 0;
     }
+    margin-right: 0;
     margin-bottom: 0.5em;
   }
 

@@ -1,17 +1,151 @@
 {% extends "default.twig" %}
 {% set title = 'La tournée' %}
-{% block content %}
-    <div class="error-container">
-        <div class="error-content">
-            <div class="error-icon">
-                <i class="fas fa-times-circle"></i>
-            </div>
-            <div class="error-text">
-                <h1 class="error-title">Oups! La page n'est pas terminé.</h1>
-                <p class="error-summary">
-                    Who can reject the emptiness and stigma of a source if he has the alchemistic light of the sun?
-                </p>
-            </div>
+{#{% set cover = true %}
+{% set cover_type = "tour" %}
+{% block cover %}
+
+    <div class="cover-tour-full-back">
+    </div>
+    <div class="cover-tour-full-container">
+        <div class="cover-tour-full-content container mx-auto">
+            <h1 class="cover-tour-full-title">Imaginarium Dream</h1>
+            <h2 class="cover-tour-full-subtitle">Du 4 au 25 Août 2018 <span>Dans toute la france</span></h2>
+
         </div>
     </div>
+
+{% endblock %}#}
+{% block content %}
+    {#<div class="section-mosaic">
+
+        <section class="show">
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-3/4 left-part">
+                    <h2 class="section-mosaic-title"> Un Spectacle solidaire</h2>
+                    <p>
+                        Lumens sunt valebats de ferox brabeuta. When the source of vision acquires the graces of the
+                        individual, the extend will know lama. The shore falls endurance like a wet lubber.
+                    </p>
+                </div>
+                <div class="w-full lg:w-1/4 right-part">
+                    <img src="https://files.lefuturiste.fr/direct/20E329C5A3B647DA0343.jpg"
+                         alt="Chargement en cours...">
+                </div>
+            </div>
+        </section>
+        <section class="places">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/2 left-part">
+                    <h2 class="section-mosaic-title">Un spectacle dans</h2>
+                    <p>La soirée cabaret se situra à l'espace des Arts'Chépontains, <b>Pont de l'arche</b></p>
+                </div>
+                <div class="w-full lg:w-1/2">
+
+                    <div id="map"
+                         width="600"
+                         height="450">
+                </div>
+
+            </div>
+    </div>
+
+    </section>
+    <section class="price" id="price">
+        <h2 class="section-mosaic-title">Tarifs</h2>
+        <div class="flex flex-wrap price-plan-mosaic">
+            <div class="w-full lg:w-1/2 price-plan-item">
+                <div class="price-plan-content">
+                    <h2 class="plan-title">6 €</h2>
+                    <h4 class="plan-summary">Enfants de moins de 12 ans</h4>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 price-plan-item">
+                <div class="price-plan-content">
+                    <h2 class="plan-title">10 €</h2>
+                    <h4 class="plan-summary">Adultes</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="booking" id="booking">
+        <h2 class="section-mosaic-title">Reservez vite !</h2>
+
+        #}{#<div class="left-part">#}{#
+
+        #}{#Vous pouvez réservez par différents moyens:#}{#
+
+        #}{#</div>#}{#
+        <div class="right-parth">
+
+            <div class="booking-ways-mosaic">
+                <div class="booking-ways-item num">
+                    <p>Reservez au <b> +33 6 50 41 38 38</b></p>
+                </div>
+                <div class="booking-ways-item email">
+                    <p>Reservez avec <b>reservation@scoutsenroute.fr</b></p>
+                </div>
+                <div class="booking-ways-item site">
+
+                    <a href="#"
+                       class="booking-button bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">Reserver
+                        en ligne</a>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    </div>#}
+
+    <div class="error-container">
+    <div class="error-content">
+    <div class="error-icon">
+    <i class="fas fa-times-circle"></i>
+    </div>
+    <div class="error-text">
+    <h1 class="error-title">Oups! La page n'est pas terminé.</h1>
+    <p class="error-summary">
+    Who can reject the emptiness and stigma of a source if he has the alchemistic light of the sun?
+    </p>
+    </div>
+    </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript">
+        var locations = [
+            ['<h1>Bondi Beach</h1>', -33.890542, 151.274856, 4],
+            ['Coogee Beach', -33.923036, 151.259052, 5],
+            ['Cronulla Beach', -34.028249, 151.157507, 3],
+            ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+            ['Maroubra Beach', -33.950198, 151.259302, 1]
+        ];
+
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: new google.maps.LatLng(-33.92, 151.25),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    </script>
 {% endblock %}
