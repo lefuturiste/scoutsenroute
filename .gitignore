@@ -9,6 +9,7 @@ package-lock.json
 tmp/*
 log/*
 log
+.idea
 
 #.env
 .env
