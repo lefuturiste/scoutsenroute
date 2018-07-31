@@ -1,151 +1,198 @@
 {% extends "default.twig" %}
 {% set title = 'La tournée' %}
-{#{% set cover = true %}
+{% set cover = true %}
 {% set cover_type = "tour" %}
 {% block cover %}
 
-    <div class="cover-tour-full-back">
+    <div class="cover-cabaret-back">
     </div>
-    <div class="cover-tour-full-container">
-        <div class="cover-tour-full-content container mx-auto">
-            <h1 class="cover-tour-full-title">Imaginarium Dream</h1>
-            <h2 class="cover-tour-full-subtitle">Du 4 au 25 Août 2018 <span>Dans toute la france</span></h2>
-
+    <div class="cover-cabaret-container">
+        <div class="cover-cabaret-content container mx-auto">
+            <h1 class="cover-cabaret-title">Imaginarium Dream</h1>
+            <h2 class="cover-cabaret-subtitle">Du 4 au 25 Août 2018 <span>Dans toute la france</span></h2>
         </div>
     </div>
 
-{% endblock %}#}
+{% endblock %}
 {% block content %}
-    {#<div class="section-mosaic">
-
+    <div class="section-mosaic">
         <section class="show">
-
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-3/4 left-part">
                     <h2 class="section-mosaic-title"> Un Spectacle solidaire</h2>
-                    <p>
-                        Lumens sunt valebats de ferox brabeuta. When the source of vision acquires the graces of the
-                        individual, the extend will know lama. The shore falls endurance like a wet lubber.
+                    <p style="line-height: 30px; font-size: 16px; padding-right: 0.5em">
+                        Notre équipe d'une quinzaine de jeune ont préprarés ce spectacle pendant toute l'année dans le
+                        but de jouer un spectacle solidaire combinant danse, comédie musicale pour les grands et les
+                        petits. Le tour en Août à pour vocation de jouer ce spectacle dans des centres de loisirs, des
+                        hopitaux, devant des enfants, des personnes agées... Il s'agit d'un projet à but non lucratif
+                        dans le cadre des Scouts et Guides de France ce qui signifie que le spectacle est joué
+                        gratuitement.
                     </p>
                 </div>
                 <div class="w-full lg:w-1/4 right-part">
                     <img src="https://files.lefuturiste.fr/direct/20E329C5A3B647DA0343.jpg"
-                         alt="Chargement en cours...">
+                         alt="Chargement en cours..." class="image-showing-tour">
                 </div>
             </div>
         </section>
         <section class="places">
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-1/2 left-part">
-                    <h2 class="section-mosaic-title">Un spectacle dans</h2>
-                    <p>La soirée cabaret se situra à l'espace des Arts'Chépontains, <b>Pont de l'arche</b></p>
+                    <h2 class="section-mosaic-title">La tournée</h2>
+                    <p style="line-height: 30px; font-size: 16px; padding-right: 0.5em">
+                        Nous prévoyons de jouer Imaginarium Dream à 10 reprise dans toute la France:
+
+                    <ul class="mt-5 list-city">
+                        <li>5 août : Niort</li>
+                        <li>8 août : Bordeau</li>
+                        <li>9 août : Gradignan</li>
+                        <li>10 août : Millau</li>
+                        <li>12 août : Grau d'Agde</li>
+                        <li>15 août : Palavas-les-Flots</li>
+                        <li>17 août : Aix les bain</li>
+                        <li>20 août : Passy</li>
+                        <li>21 août : Monthey</li>
+                        <li>23 août : Strasbourg</li>
+                    </ul>
+                    </p>
                 </div>
                 <div class="w-full lg:w-1/2">
 
-                    <div id="map"
-                         width="600"
-                         height="450">
-                </div>
-
-            </div>
-    </div>
-
-    </section>
-    <section class="price" id="price">
-        <h2 class="section-mosaic-title">Tarifs</h2>
-        <div class="flex flex-wrap price-plan-mosaic">
-            <div class="w-full lg:w-1/2 price-plan-item">
-                <div class="price-plan-content">
-                    <h2 class="plan-title">6 €</h2>
-                    <h4 class="plan-summary">Enfants de moins de 12 ans</h4>
-                </div>
-            </div>
-            <div class="w-full lg:w-1/2 price-plan-item">
-                <div class="price-plan-content">
-                    <h2 class="plan-title">10 €</h2>
-                    <h4 class="plan-summary">Adultes</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="booking" id="booking">
-        <h2 class="section-mosaic-title">Reservez vite !</h2>
-
-        #}{#<div class="left-part">#}{#
-
-        #}{#Vous pouvez réservez par différents moyens:#}{#
-
-        #}{#</div>#}{#
-        <div class="right-parth">
-
-            <div class="booking-ways-mosaic">
-                <div class="booking-ways-item num">
-                    <p>Reservez au <b> +33 6 50 41 38 38</b></p>
-                </div>
-                <div class="booking-ways-item email">
-                    <p>Reservez avec <b>reservation@scoutsenroute.fr</b></p>
-                </div>
-                <div class="booking-ways-item site">
-
-                    <a href="#"
-                       class="booking-button bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">Reserver
-                        en ligne</a>
+                    <div id="mapdiv" style="height: 476px;
+margin-bottom: 0.5em !important;">
+                    </div>
 
                 </div>
             </div>
-        </div>
 
+        </section>
+        <style>
+            .list-city {
+                list-style-type: square;
+                padding-top: 1em;
+                padding-bottom: 1em;
 
-    </section>
-    </div>#}
+            }
 
-    <div class="error-container">
-    <div class="error-content">
-    <div class="error-icon">
-    <i class="fas fa-times-circle"></i>
+            .list-city li {
+                margin-bottom: 10px;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+
+            #mapdiv #OpenLayers_Control_Attribution_7 {
+                display: none;
+            }
+
+            @media (max-width: 700px) {
+                #mapdiv,.image-showing-tour {
+                    margin-top: 1em;
+                }
+            }
+
+        </style>
     </div>
-    <div class="error-text">
-    <h1 class="error-title">Oups! La page n'est pas terminé.</h1>
-    <p class="error-summary">
-    Who can reject the emptiness and stigma of a source if he has the alchemistic light of the sun?
-    </p>
-    </div>
-    </div>
-    </div>
+
+    {#<div class="error-container">#}
+    {#<div class="error-content">#}
+    {#<div class="error-icon">#}
+    {#<i class="fas fa-times-circle"></i>#}
+    {#</div>#}
+    {#<div class="error-text">#}
+    {#<h1 class="error-title">Oups! La page n'est pas terminé.</h1>#}
+    {#<p class="error-summary">#}
+    {#Who can reject the emptiness and stigma of a source if he has the alchemistic light of the sun?#}
+    {#</p>#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
 {% endblock %}
 {% block scripts %}
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
     <script type="text/javascript">
-        var locations = [
-            ['<h1>Bondi Beach</h1>', -33.890542, 151.274856, 4],
-            ['Coogee Beach', -33.923036, 151.259052, 5],
-            ['Cronulla Beach', -34.028249, 151.157507, 3],
-            ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-            ['Maroubra Beach', -33.950198, 151.259302, 1]
-        ];
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
 
+        var markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: new google.maps.LatLng(-33.92, 151.25),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
+        var size = new OpenLayers.Size(24, 24);
+        var offset = new OpenLayers.Pixel(-(size.w / 2), -size.h);
 
-        var infowindow = new google.maps.InfoWindow();
+        //niort
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(-0.46552, 46.32308)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
 
-        var marker, i;
+        //bordeau
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(-0.57650, 44.84053)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
 
-        for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map
-            });
+        //gradinant
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(-0.61378, 44.77384)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
 
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-        }
+        //Millau
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(3.07820, 44.09997)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
+
+        //Grau d'Agde
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(3.45728, 43.28856)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
+
+        //Palavas-les-Flots
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(3.9353104, 43.530509)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
+
+        //passy
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(6.68674, 45.92373)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
+
+        //louviers
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(1.17012, 49.21313)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/ALdeyep.png', size, offset)));
+
+        //Monthey
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(6.94717, 46.25277)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
+
+        //Srasbourg
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(7.74502, 48.58372)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), new OpenLayers.Icon('https://i.imgur.com/xQD7J8E.png', size, offset)));
+
+        map.setCenter(new OpenLayers.LonLat(2.153, 46.649)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            ), 6);
     </script>
 {% endblock %}

@@ -2,7 +2,8 @@
 return [
 	'staileu' => [
 		'public' => getenv('STAILEU_PUBLIC'),
-		'private' => getenv('STAILEU_PRIVATE')
+		'private' => getenv('STAILEU_PRIVATE'),
+		'redirect' => getenv('STAILEU_REDIRECT')
 	],
 	'instagram' => [
 		'id' => getenv('INSTAGRAM_ID'),

@@ -7,7 +7,7 @@ return [
 		'level' => getenv('LOG_LEVEL'),
 		'discord' => getenv('LOG_DISCORD'),
 		'discord_webhooks' => [
-			getenv('DISCORD_WH')
+			getenv('LOG_DISCORD_WH')
 		],
 		'path' => getenv('LOG_PATH')
 	],

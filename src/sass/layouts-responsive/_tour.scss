@@ -1,5 +1,11 @@
 .tour {
   .left-part {
     margin-bottom: .5em;
+    padding-right: 0 !important;
+  }
+  .right-part {
+    img {
+      margin-top: 1em !important;
+    }
   }
 }

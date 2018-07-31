@@ -50,9 +50,6 @@
     {% if block("style") is defined %}
         {{ block('style') }}
     {% endif %}
-    <script src="http://maps.google.com/maps/api/js?sensor=false"
-            type="text/javascript"></script>
-
 </head>
 <body>
 
@@ -87,7 +84,6 @@
                 <li><a href="{{ path_for('home') }}">Accueil</a></li>
                 <li><a href="{{ path_for('blog.posts') }}">Actualités</a></li>
                 <li><a href="{{ path_for('tour') }}">La Tournée</a></li>
-                <li><a href="{{ path_for('cabaret') }}">Soirée cabaret</a></li>
                 <li><a href="{{ path_for('about') }}">A propos</a></li>
             </ul>
         </div>
