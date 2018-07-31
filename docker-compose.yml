@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    build: .
+    image: lefuturiste/scoutsenroute
     environment:
       STAILEU_PUBLIC: d0567390-62ab-4fa3-82b4-b7b522a66b41
       STAILEU_PRIVATE: e59f9306-69f7-48bc-86ec-cb9e7df0aa2d
