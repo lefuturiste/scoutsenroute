@@ -14,6 +14,11 @@ require '../vendor/autoload.php';
 | .env load
 |--------------------------------------------------------------------------
 */
+if (file_exists("../.env")) {
+    $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
+    $dotenv->load();
+}
+
 $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
 $dotenv->load();
 
