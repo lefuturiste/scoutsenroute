@@ -27,7 +27,7 @@ ENV APP_NAME scoutsenroute
 ENV APP_ENV_NAME prod
 ENV APP_DEBUG 0
 ENV LOG_DISCORD 1
-ENV LOG_DISCORD_WH https://discordapp.com/api/webhooks/468096349292986368/oM2DKFsSwtCntbZd0Mcpynyo_BoOiYQq4SWyTLNzfJyt6LmcAEH3cXgwIuHy8gnH0h77
+ENV LOG_DISCORD_WH https://discordapp.com/api/webhooks/412942433223966721/vEhn7eidxTTvmPvJkzfndeJrnkh9uFzRbejhwXRx5iSIl7O4qJwZofp8dZ89BHg_Itaz
 ENV LOG_PATH ../log
 ENV LOG_LEVEL INFO
 ENV TWIG_CACHE true
