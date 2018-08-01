@@ -27,6 +27,8 @@ services:
     restart: always
     depends_on:
       - db
+    links:
+      - db
     ports:
       - "8020:8000"
   db:
