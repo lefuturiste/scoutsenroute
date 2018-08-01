@@ -15,4 +15,6 @@ $app->group('/api', function (){
 		$this->delete('/{id}', [\App\Controllers\Api\BlogApiController::class, 'destroy']);
 		$this->post('[/]', [\App\Controllers\Api\BlogApiController::class, 'store']);
 	});
-});
+})->add(new Tuupola\Middleware\HttpBasicAuthentication([
+    "users" => $app->getContainer()->get('api_users')
+]));

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>administration</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <style>
+        * {
+            font-family: Roboto;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div>
+        <v-content>
+            <v-container>
+                <!-- -->
+                <div v-if="loading">
+                    LOADING...
+                </div>
+                <div v-if="want_password">
+                    I want password
+                    <v-text-field v-model="password" label="api root password"></v-text-field>
+                    <v-btn @click="submitPassword()">Submit</v-btn>
+                </div>
+                <div v-if="want_password == false && loading == false">
+                    Ok! so...
+                    <v-btn @click="fetchData()">Refresh</v-btn>
+                    <v-btn @click="addDialog = true">Add</v-btn>
+                    <br>
+                    posts lenth : {{posts.length}}
+
+                    <br>
+                    <br>
+                    <template v-for="(item, index) in posts"
+                              v-if="posts.length > 0">
+                        <v-list-tile>
+                            <v-list-tile-content>
+                                <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                                <v-list-tile-sub-title v-html="item.summary"></v-list-tile-sub-title>
+                            </v-list-tile-content>
+                            <div>
+                                <v-btn @click.stop="toDelete=item.id; destroy();">del</v-btn>
+                                <v-btn @click.stop="toEdit=item; editDialog=true">edit</v-btn>
+                            </div>
+                        </v-list-tile>
+                        <v-divider v-if="index + 1 < posts.length" :key="`divider-${index}`"></v-divider>
+                    </template>
+                </div>
+
+            </v-container>
+        </v-content>
+        <v-dialog v-model="addDialog">
+            <v-card>
+                <v-card-title class="headline">add a post</v-card-title>
+
+                <v-card-text>
+                    <form>
+                        <v-text-field
+                                v-model="toAdd.title"
+                                label="title"></v-text-field>
+                        <v-text-field
+                                v-model="toAdd.summary"
+                                label="summary"></v-text-field>
+
+                        <v-text-field
+                                v-model="toAdd.cover_url"
+                                label="cover_url"></v-text-field>
+
+                        <v-text-field
+                                v-model="toAdd.thumb_url"
+                                label="thumb_url"></v-text-field>
+
+                        <v-textarea
+                                v-model="toAdd.content"
+                                label="content"></v-textarea>
+                    </form>
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+
+                    <v-btn
+                            color="green darken-1"
+                            flat="flat"
+                            @click="addDialog = false"
+                    >
+                        Close
+                    </v-btn>
+
+                    <v-btn
+                            color="green darken-1"
+                            flat="flat"
+                            @click="add()"
+                    >
+                        Submit
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog> <v-dialog v-model="editDialog">
+        <v-card>
+            <v-card-title class="headline">edit a post</v-card-title>
+
+            <v-card-text>
+                <form>
+                    <v-text-field
+                            v-model="toEdit.title"
+                            label="title"></v-text-field>
+                    <v-text-field
+                            v-model="toEdit.summary"
+                            label="summary"></v-text-field>
+
+                    <v-text-field
+                            v-model="toEdit.cover_url"
+                            label="cover_url"></v-text-field>
+
+                    <v-text-field
+                            v-model="toEdit.thumb_url"
+                            label="thumb_url"></v-text-field>
+
+                    <v-textarea
+                            v-model="toEdit.content"
+                            label="content"></v-textarea>
+                </form>
+            </v-card-text>
+
+            <v-card-actions>
+                <v-spacer></v-spacer>
+
+                <v-btn
+                        color="green darken-1"
+                        flat="flat"
+                        @click="editDialog = false"
+                >
+                    Close
+                </v-btn>
+
+                <v-btn
+                        color="green darken-1"
+                        flat="flat"
+                        @click="edit()"
+                >
+                    Submit
+                </v-btn>
+            </v-card-actions>
+        </v-card>
+    </v-dialog>
+    </div>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://unpkg.com/vuetify/dist/vuetify.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            password: "",
+            want_password: "",
+            posts: [],
+            addDialog: false,
+            toAdd: {
+                title: "",
+                content: "",
+                summary: "",
+                thumb_url: "",
+                cover_url: ""
+            },
+            userId: "SA-5b61d297d6e74",
+            loading: false,
+            toDelete: "",
+            toEdit: {},
+            editDialog: false
+        },
+        mounted() {
+            if (Cookies.get('admin_password') == undefined) {
+                this.want_password = true;
+            } else {
+                this.want_password = false;
+                this.password = Cookies.get('admin_password');
+            }
+        },
+        methods: {
+            submitPassword() {
+                Cookies.set('admin_password', this.password);
+                this.want_password = false;
+                alert('set!');
+            },
+            fetchData() {
+                this.loading = true
+                axios.get("/api/post", {
+                    auth: {
+                        username: 'root',
+                        password: this.password
+                    }
+                }).then((response) => {
+                    this.loading = false;
+                    this.posts = response.data.data
+                }).catch((response) => {
+                    this.loading = false;
+                    alert("err");
+                })
+            },
+            edit() {
+                this.loading = true;
+                axios.post("/api/post/" + this.toEdit.id, {
+                    title: this.toEdit.title,
+                    summary: this.toEdit.summary,
+                    content: this.toEdit.content,
+                    thumb_url: this.toEdit.thumb_url,
+                    cover_url: this.toEdit.cover_url,
+                    user_id: this.userId
+                }, {
+                    auth: {
+                        username: 'root',
+                        password: this.password
+                    }
+                }).then((response) => {
+                    this.loading = false;
+                    alert("success editing item: " + response.data.data.id)
+                    this.editDialog = false
+                    this.fetchData()
+                }).catch((response) => {
+                    this.loading = false;
+                    alert("err while edit item")
+                })
+            },
+            add() {
+                this.loading = true;
+                axios.post("/api/post", {
+                    title: this.toAdd.title,
+                    summary: this.toAdd.summary,
+                    content: this.toAdd.content,
+                    thumb_url: this.toAdd.thumb_url,
+                    cover_url: this.toAdd.cover_url,
+                    user_id: this.userId
+                }, {
+                    auth: {
+                        username: 'root',
+                        password: this.password
+                    }
+                }).then((response) => {
+                    this.loading = false;
+                    alert("success adding item: " + response.data.data.id)
+                    this.addDialog = false
+                    this.fetchData()
+                }).catch((response) => {
+                    this.loading = false;
+                    alert("err while add item")
+                })
+            },
+            destroy() {
+                if (confirm('really sure ? ')) {
+                    this.loading = true;
+                    axios.delete("/api/post/" + this.toDelete, {
+                        auth: {
+                            username: 'root',
+                            password: this.password
+                        }
+                    }).then((response) => {
+                        this.loading = false;
+                        alert("success deleting item");
+                        this.fetchData()
+                    }).catch((error) => {
+                        console.log(error);
+                        this.loading = false;
+                        alert("err while deleting item")
+                    })
+                }
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

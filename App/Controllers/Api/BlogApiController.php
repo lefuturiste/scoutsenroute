@@ -51,6 +51,7 @@ class BlogApiController extends Controller
 			$post->slug = $slugify->slugify($validator->getValue('title'));
 			$post->summary = $validator->getValue('summary');
 			$post->thumb_url = $validator->getValue('thumb_url');
+			$post->cover_url = $validator->getValue('cover_url');
 			$post->content = $validator->getValue('content');
 			if (User::find($validator->getValue('user_id')) == NULL){
 				$user = [
@@ -59,6 +60,7 @@ class BlogApiController extends Controller
 					'avatar_url' => $STAILEUAccounts->getAvatar($validator->getValue('user_id'))->getUrl()
 				];
 				$post->user()->create($user);
+                $post->user()->associate($validator->getValue('user_id'));
 			}else{
 				$post->user()->associate($validator->getValue('user_id'));
 			}

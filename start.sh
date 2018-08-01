@@ -31,6 +31,7 @@ echo "env[INSTAGRAM_ID] = $INSTAGRAM_ID;" >>  /etc/php/7.2/fpm/pool.d/www.conf
 echo "env[INSTAGRAM_SECRET] = $INSTAGRAM_SECRET;" >>  /etc/php/7.2/fpm/pool.d/www.conf
 echo "env[INSTAGRAM_REDIRECT_URI] = $INSTAGRAM_REDIRECT_URI;" >>  /etc/php/7.2/fpm/pool.d/www.conf
 echo "env[INSTAGRAM_ACCESS_TOKEN] = $INSTAGRAM_ACCESS_TOKEN;" >>  /etc/php/7.2/fpm/pool.d/www.conf
+echo "env[ROOT_API_PASSWORD] = $ROOT_API_PASSWORD;" >>  /etc/php/7.2/fpm/pool.d/www.conf
 echo "Done!"
 
 echo "Migrating db..."

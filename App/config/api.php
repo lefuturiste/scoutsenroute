@@ -10,5 +10,8 @@ return [
 		'secret' => getenv('INSTAGRAM_SECRET'),
 		'redirect_uri' => getenv('INSTAGRAM_REDIRECT_URI'),
 		'access_token' => getenv('INSTAGRAM_ACCESS_TOKEN')
-	]
+	],
+    'api_users' => [
+        "root" => getenv("ROOT_API_PASSWORD")
+    ]
 ];

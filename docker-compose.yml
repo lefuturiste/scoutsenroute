@@ -15,6 +15,7 @@ services:
       MYSQL_DATABASE: scoutsenroute
       MYSQL_USERNAME: root
       MYSQL_PASSWORD: root
+      ROOT_API_PASSWORD: opalia_scoutsenroute_imaginarium_dream
     restart: always
     links:
       - db
