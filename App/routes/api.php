@@ -16,5 +16,6 @@ $app->group('/api', function (){
 		$this->post('[/]', [\App\Controllers\Api\BlogApiController::class, 'store']);
 	});
 })->add(new Tuupola\Middleware\HttpBasicAuthentication([
-    "users" => $app->getContainer()->get('api_users')
+    "users" => $app->getContainer()->get('api_users'),
+		"secure" => false
 ]));
