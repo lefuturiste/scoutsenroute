@@ -20,3 +20,30 @@
     //}
   }
 }
+
+.playlist { 
+  padding-bottom: 2.3em !important;
+  .actions-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom: 1em;
+
+    .btn {
+      font-size: 1.2em;
+    }
+    i {
+    margin-right: 10px;
+    }
+    .spotify-button {
+      margin-right: 1.1em;
+      background-color: #1db954 !important;
+    }
+    .soundcloud-button {
+      background-image: radial-gradient(circle, #ff8800, #ff7700, #ff6500, #ff4f00, #ff3300);
+    }
+  }
+}

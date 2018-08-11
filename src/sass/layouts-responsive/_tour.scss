@@ -9,3 +9,18 @@
     }
   }
 }
+
+
+.playlist { 
+  padding-bottom: 2.3em !important;
+  .actions-buttons {
+  	.btn {
+      font-size: 1em !important;
+    }
+    i {
+  	  margin-right: 5px !important;
+    }
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+}
