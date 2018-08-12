@@ -16,7 +16,7 @@ class HomeController extends Controller
 	public function getHome(ServerRequestInterface $request, ResponseInterface $response, Manager $manager, Instagram $instagram, Container $container)
 	{
 		$lastInstagramPosts = $instagram->getUserMedia('self', 4)->data;
-		$posts = Post::with('user')->get();
+		$posts = Post::with('user')->orderBy('created_at', 'desc')->get();
 		return $this->render($response, 'pages.home', [
 			'posts' => $posts->toArray(),
 			'lastInstagramPosts' => $lastInstagramPosts
