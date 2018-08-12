@@ -18,7 +18,7 @@ class BlogController extends Controller
 {
 	public function getPosts(ServerRequestInterface $request, ResponseInterface $response, Manager $manager)
 	{
-		$posts = Post::with('user')->get();
+		$posts = Post::with('user')->orderBy('created_at', 'desc')->get();
 		return $this->render($response, 'blog.posts', [
 			'posts' => $posts->toArray()
 		]);
