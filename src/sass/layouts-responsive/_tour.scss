@@ -15,12 +15,17 @@
   padding-bottom: 2.3em !important;
   .actions-buttons {
   	.btn {
+	width: 100%;
+text-align: center;
       font-size: 1em !important;
+	margin-bottom: 1em;
+	margin-right: 0;
     }
     i {
   	  margin-right: 5px !important;
     }
     width: 100% !important;
-    justify-content: space-between !important;
+   flex-wrap: wrap;	
+    justify-content: center !important;
   }
 }

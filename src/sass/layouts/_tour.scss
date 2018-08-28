@@ -37,11 +37,17 @@
       cursor: pointer !important;
     }
     i {
-    margin-right: 10px;
+	margin-right: 10px;
+	position: relative;
+	bottom: -2px;
     }
     .spotify-button {
       margin-right: 1.1em;
       background-color: #1db954 !important;
+    }
+    .youtube-button {
+      margin-right: 1.1em;
+      background-color: #FF0000;
     }
     .soundcloud-button {
       background-image: radial-gradient(circle, #ff8800, #ff7700, #ff6500, #ff4f00, #ff3300);
